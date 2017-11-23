@@ -8,7 +8,7 @@ def caesar_cipher(entry,shift)
   alphabet = ('a'..'z').to_a
   upper_alphabet = ('A'..'Z').to_a
 
-  #ruby way
+  #ruby way 
   entry.each_char do |char|
 
     if alphabet.include?(char)  
