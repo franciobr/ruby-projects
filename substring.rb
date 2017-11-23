@@ -1,5 +1,5 @@
 #Implement a method #substrings that takes a word as the first argument and then an array of valid substrings (your dictionary) as the second argument. It should return a hash listing each substring (case insensitive) that was found in the original string and how many times it was found.
-
+#does git sees my comment =P?
 #---PSEUDO CODE---
 #generate a substring
 #look for substring in dictionary
@@ -10,21 +10,21 @@ def substring_sentence(string,dictionary)
 
   words_from_string = string.downcase.split(" ") #scans each word
   puts "words from string: #{words_from_string}"
+
   count_hash = Hash.new(0)
 
   words_from_string.each do |word|
     clean_word = string_cleanup(word).downcase
     substring_array = generate_substrings(clean_word)
-    puts substring_array
+    puts "substring: #{substring_array}"
 
     substring_array.each do |substring|
       if dictionary.include?(substring)
         count_hash[substring] += 1
       end
     end
-
-    return count_hash
   end
+  return count_hash
 end
 
 def string_cleanup(string)
