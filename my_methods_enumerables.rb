@@ -162,13 +162,15 @@ module Enumerable
     else
       accumulator = self[0]
     end
+    puts "accumulator_0 = #{accumulator}"
 
     self.my_each do |element|
-      block.call(accumulator, element)
+      accumulator = block.call(accumulator, element)
     end
+
     return accumulator
   end
-  
+
   def my_map(&block) #block implementation transforming it into a proc
     out = []
     if block==nil
@@ -178,6 +180,7 @@ module Enumerable
     self.my_each do |element|
       out << block.call(element)
     end
+    
 
     return out
   end
