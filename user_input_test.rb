@@ -1,7 +1,12 @@
-print "Enter a value"
-first_num = gets.to_i
+class Dog
+  attr_accessor :name, :height, :weight
+  def bark
+    puts "generic bark"
+  end
 
-print "Enter Another Value"
-second_num = gets.to_i
-
-puts "Ok, bora de novo #{first_num} #{second_num}"
+  # def :name=(new_name)
+  #   if new_name.is_a?(Numeric)
+  #     puts "Cannot be an umber"
+  #   end
+  # end
+end

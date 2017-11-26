@@ -4,7 +4,7 @@
 # Copyright:: No Copytright
 # License::   Distributes under the same terms as Ruby
 
-#This class holds the board of the game. It is the front-end that interacts with the two players of tictactoe.
+#This was my first implementation. Many ways to improve this. xo_char should become a instance variable. @xo should change to board name. Improve the end game checker with loops or with arrays of lines checking. 
 
 class Board
 
@@ -69,49 +69,49 @@ class Board
     if @xo[0]==xo_char and @xo[0]==@xo[1] and @xo[0]==@xo[2]
       puts "Game Over!!! Player #{xo_char} wins!"
       self.draw_board 
-      exit
+      abort("Script stopped running.")
 
       #row 2 check
     elsif @xo[3]==xo_char and @xo[3]==@xo[4] and @xo[3]==@xo[5]
       puts "Game Over!!! Player #{xo_char} wins!"
       self.draw_board 
-      exit
+      abort("Script stopped running.")
 
       #row 3 check
     elsif @xo[6]==xo_char and @xo[6]==@xo[7] and @xo[6]==@xo[8]
       puts "Game Over!!! Player #{xo_char} wins!"
       self.draw_board 
-      exit
+      abort("Script stopped running.")
 
       #column 1 check
     elsif @xo[0]==xo_char and @xo[0]==@xo[3] and @xo[0]==@xo[6]
       puts "Game Over!!! Player #{xo_char} wins!"
       self.draw_board 
-      exit
+      abort("Script stopped running.")
 
       #column 2 check
     elsif @xo[1]==xo_char and @xo[1]==@xo[4] and @xo[1]==@xo[7]
       puts "Game Over!!! Player #{xo_char} wins!"
       self.draw_board 
-      exit
+      abort("Script stopped running.")
 
       #column 3 check
     elsif @xo[2]==xo_char and @xo[2]==@xo[5] and @xo[2]==@xo[8]
       puts "Game Over!!! Player #{xo_char} wins!"
       self.draw_board 
-      exit
+      abort("Script stopped running.")
 
       #diagonal 1 check
     elsif @xo[0]==xo_char and @xo[0]==@xo[4] and @xo[0]==@xo[8]
       puts "Game Over!!! Player #{xo_char} wins!"
       self.draw_board 
-      exit
+      abort("Script stopped running.")
 
       #diagonal 2 check
     elsif @xo[2]==xo_char and @xo[2]==@xo[4] and @xo[2]==@xo[6]
       puts "Game Over!!! Player #{xo_char} wins!"
       self.draw_board 
-      exit
+      abort("Script stopped running.")
 
       #checks if the board is full
     elsif @xo.each do |position|
@@ -122,7 +122,7 @@ class Board
       if fill_board_checker==9
         puts "It`s a tie! Play again =D!"
         self.draw_board 
-        exit
+        abort("Script stopped running.")
       end
     end
   end
